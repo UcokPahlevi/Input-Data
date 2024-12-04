@@ -2,6 +2,25 @@
 @import url('https://fonts.cdnfonts.com/css/pt-sans-2');
 @import url('https://fonts.cdnfonts.com/css/barlow');
 
+.login-btn {
+    transition: 0.3s;
+    font-family: 'Barlow';
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+    margin: 0px 5px 0px 0px;
+    padding: 2px 30px 2px 30px;
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+    background-color: #0d3769;
+}
+
+.login-btn:hover {
+    transition: 0.3s;
+    background-color: #e67817;
+}
+
 .calculator {
     border: 1px solid;
     border-radius: 10px;
@@ -9,7 +28,6 @@
     padding: 20px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    /* Membuat 3 kolom */
     gap: 10px;
     opacity: 100%;
 }
@@ -32,8 +50,27 @@
     background-color: #e67817;
 }
 
+.button-x {
+    text-decoration: none;
+    font-family: 'Barlow';
+    color: #fff;
+    background-color: #c64543;
+    border: none;
+    padding: 20px;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.button-x:hover {
+    transition: 0.3s;
+    background-color: #e0423f;
+}
+
 .form-login {
     position: relative;
+    background-color: #fff;
 
     .alert-area {
         margin: 0px 0px 0px 0px;
