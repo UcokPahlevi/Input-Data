@@ -74,24 +74,41 @@
     <script>
         $(document).ready(function () {
             let currentInput = '';
-
-            // Fungsi untuk menambahkan angka ke input nomor
+    
+            function formatPhoneNumber(phone) {
+                let value = phone.replace(/\D/g, ''); 
+                let formatted = value;
+    
+                if (value.length > 4 && value.length <= 8) {
+                    formatted = value.replace(/(\d{4})(\d+)/, '$1-$2'); 
+                } else if (value.length > 8) {
+                    formatted = value.replace(/(\d{4})(\d{4})(\d+)/, '$1-$2-$3'); 
+                }
+    
+                return formatted;
+            }
+    
             $('.button[data-number]').click(function () {
                 const number = $(this).data('number');
                 currentInput += number;
-                $('#formatted-phone').val(currentInput);
+    
+                const formattedPhone = formatPhoneNumber(currentInput);
+                $('#formatted-phone').val(formattedPhone);
+    
+                $('#raw-phone').val(currentInput);
             });
-
-            // Fungsi untuk menghapus karakter terakhir dari input nomor
+    
             $('#delete').click(function () {
                 currentInput = currentInput.slice(0, -1);
-                $('#formatted-phone').val(currentInput);
+                const formattedPhone = formatPhoneNumber(currentInput);
+                $('#formatted-phone').val(formattedPhone);
+                $('#raw-phone').val(currentInput);
             });
-
-            // Fungsi untuk menghapus seluruh input nomor
+    
             $('#clear').click(function () {
                 currentInput = '';
-                $('#formatted-phone').val(currentInput);
+                $('#formatted-phone').val('');
+                $('#raw-phone').val('');
             });
         });
     </script>
